@@ -1,5 +1,12 @@
 
-<input type="text"  [(ngModel)]="formInput"placeholder="Digite o nome">
+<input type="text" class="estilo-bonitao" [(ngModel)]="formInput"placeholder="Digite o nome"
+
+[ngClass]="{'input-invalido': validControl()}"
+>
 
 <br>
 ISSO NO COMPONENTE FILHO: {{formInput() | json}}
+<br>
+CONTROLE TA VALIDO:{{
+    validControl() | json
+}}

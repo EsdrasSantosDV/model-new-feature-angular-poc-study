@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, model, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-search',
@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class SearchComponent {
   formInput=model.required<string | null>({alias:'inputControl'})
+  validControl=model.required<boolean>({alias:'validControl'})
+
+  
   /*
     dessa forma conseguimos realizar two way data binding de forma muito mais simples e reativa, com o model
     ligamos esse signal no signal do pai, agora as possibilidades são gigantescas
