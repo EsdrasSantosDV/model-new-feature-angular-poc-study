@@ -10,8 +10,14 @@ import { FormsModule } from '@angular/forms';
   changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent {
+
   formInput=model.required<string | null>({alias:'inputControl'})
   validControl=model.required<boolean>({alias:'validControl'})
+
+  setEsdras() {
+    //NO FILHO AGORA
+    this.formInput.set("Esdras");
+    }
 
   
   /*
